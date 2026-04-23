@@ -1,0 +1,622 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#F6F2EC">
+
+  <title>About Shane | Cabinet Dealer Sites by FlipFix Digital</title>
+  <meta name="description" content="Meet Shane Nguyen, founder of FlipFix Digital. Cabinet dealer sites are the only thing I build. Founder-led, one project at a time, direct access.">
+
+  <link rel="canonical" href="https://flipfixdigital.com/about.html">
+
+  <meta property="og:site_name" content="FlipFix Digital">
+  <meta property="og:title" content="About Shane, FlipFix Digital">
+  <meta property="og:description" content="Cabinet dealer sites are my entire practice. Founder-led, one project at a time, direct access.">
+  <meta property="og:url" content="https://flipfixdigital.com/about.html">
+  <meta property="og:type" content="profile">
+  <meta property="og:image" content="https://flipfixdigital.com/assets/images/og-cover.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="About Shane, FlipFix Digital">
+  <meta name="twitter:description" content="Cabinet dealer sites are my entire practice. Founder-led, one project at a time, direct access.">
+  <meta name="twitter:image" content="https://flipfixdigital.com/assets/images/og-cover.svg">
+
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="assets/images/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,400..600,30..100;1,9..144,400..500,30..100&family=Manrope:wght@400;500;600;700&display=swap">
+
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+
+  <style>
+    /* ---------- About page hero ---------- */
+    .page-hero {
+      padding-block: var(--section-y);
+      padding-inline: var(--gutter);
+      background: var(--bg-cream);
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      top: -10%;
+      right: -8%;
+      width: 50%;
+      height: 120%;
+      background: radial-gradient(ellipse at center, rgba(168, 144, 96, 0.12) 0%, rgba(168, 144, 96, 0) 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .page-hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--container-standard);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      align-items: center;
+    }
+    @media (min-width: 64em) {
+      .page-hero__inner { grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: clamp(var(--space-10), 5vw, var(--space-16)); }
+    }
+    .page-hero__text { max-width: 40rem; }
+    .page-hero__text h1 {
+      margin-top: var(--space-4);
+      text-wrap: balance;
+      font-variation-settings: "opsz" 96, "SOFT" 30;
+    }
+    .page-hero__text .lede { margin-top: var(--space-4); max-width: 46ch; }
+    .page-hero__cta { margin-top: var(--space-6); display: flex; gap: var(--space-3); flex-wrap: wrap; }
+    .page-hero__portrait { margin: 0; position: relative; }
+    .page-hero__portrait .placeholder {
+      aspect-ratio: 4 / 5;
+      min-height: 22rem;
+      max-height: 30rem;
+    }
+    .page-hero__portrait::before {
+      content: "";
+      position: absolute;
+      inset: var(--space-4) calc(-1 * var(--space-4)) calc(-1 * var(--space-4)) var(--space-4);
+      border: 1px solid var(--gold);
+      z-index: -1;
+    }
+
+    /* ---------- Founder pitch section ---------- */
+    .founder-pitch {
+      background: var(--bg-cream-deep);
+      padding-block: var(--section-y);
+      padding-inline: var(--gutter);
+    }
+    .founder-pitch__inner {
+      max-width: var(--container-standard);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      align-items: start;
+    }
+    @media (min-width: 64em) {
+      .founder-pitch__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: clamp(var(--space-10), 5vw, var(--space-16)); }
+    }
+    .founder-pitch__left h2 {
+      font-size: clamp(2rem, 2vw + 1rem, 3rem);
+      max-width: 12ch;
+      margin: var(--space-4) 0 0;
+    }
+    .founder-pitch__quote {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(1.25rem, 1vw + 1rem, 1.625rem);
+      line-height: 1.35;
+      color: var(--gold-deep);
+      margin-top: var(--space-6);
+      max-width: 22ch;
+      font-variation-settings: "opsz" 48;
+    }
+    .founder-pitch__right p {
+      margin: 0 0 var(--space-5);
+      color: var(--ink);
+      font-size: var(--fs-body);
+      line-height: 1.65;
+      max-width: 58ch;
+    }
+    .founder-pitch__right strong { font-weight: var(--fw-semibold); color: var(--ink); }
+    .founder-pitch__right em { font-style: italic; color: var(--gold-deep); font-variation-settings: "opsz" 24; }
+    .founder-pitch__promise {
+      margin-top: var(--space-6);
+      padding-top: var(--space-6);
+      border-top: 1px solid var(--rule);
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.375rem;
+      line-height: 1.35;
+      color: var(--ink);
+      font-variation-settings: "opsz" 48;
+    }
+    .founder-pitch__sig {
+      display: block;
+      margin-top: var(--space-4);
+      font-family: var(--font-display);
+      font-style: italic;
+      color: var(--gold-deep);
+      font-size: 1.125rem;
+    }
+
+    /* ---------- By the numbers (lightweight stat band) ----------
+       Sits between founder-pitch (cream-deep) and principles (cream).
+       Visually lighter than the work-page outcome-strip: smaller display
+       numbers, no heavy borders on the cells, thin top/bottom rules only,
+       centered text. This is an About page, not a results page. */
+    .about-stats {
+      padding-block: var(--space-12);
+      padding-inline: var(--gutter);
+      background: var(--bg-cream);
+    }
+    .about-stats__inner {
+      max-width: var(--container-standard);
+      margin-inline: auto;
+      text-align: center;
+    }
+    .about-stats__inner .eyebrow { margin-inline: auto; }
+    .about-stats__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+      margin-top: var(--space-6);
+      padding-block: var(--space-6);
+      border-top: 1px solid var(--rule-soft);
+      border-bottom: 1px solid var(--rule-soft);
+    }
+    @media (min-width: 48em) {
+      .about-stats__grid { grid-template-columns: repeat(3, 1fr); gap: 0; }
+    }
+    .about-stat {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      padding-inline: var(--space-5);
+      text-align: center;
+    }
+    @media (min-width: 48em) {
+      .about-stat + .about-stat { border-left: 1px solid var(--rule-soft); }
+    }
+    .about-stat__value {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 1vw + 1rem, 1.875rem);
+      line-height: 1.1;
+      color: var(--ink);
+      font-variation-settings: "opsz" 48;
+      letter-spacing: -0.01em;
+    }
+    .about-stat__label {
+      font-family: var(--font-body);
+      font-size: var(--fs-caption);
+      color: var(--warm-gray);
+      line-height: 1.5;
+    }
+
+    /* Hide the global pre-footer CTA band on this page only.
+       "Ready to bring in more contractors..." is inlined into each page's
+       footer markup (not a shared component), so we scope-hide here. */
+    .site-footer__cta { display: none; }
+
+    /* ---------- Principle blocks ---------- */
+    .principles {
+      padding-block: var(--section-y);
+      padding-inline: var(--gutter);
+    }
+    .principles__head {
+      max-width: var(--container-standard);
+      margin: 0 auto var(--space-10);
+      text-align: center;
+    }
+    .principles__head .eyebrow { margin-inline: auto; }
+    .principles__head h2 { margin-top: var(--space-4); max-width: 22ch; margin-inline: auto; }
+    .principles__grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-5);
+      max-width: var(--container-standard);
+      margin-inline: auto;
+    }
+    @media (min-width: 48em) { .principles__grid { grid-template-columns: repeat(3, 1fr); } }
+    .principle-card {
+      background: var(--bg-cream);
+      border: 1px solid var(--rule);
+      padding: var(--space-6) var(--space-6) var(--space-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+    .principle-card__no {
+      font-family: var(--font-display);
+      font-size: 2.25rem;
+      line-height: 1;
+      color: var(--gold);
+      font-variation-settings: "opsz" 72;
+      letter-spacing: -0.02em;
+      font-weight: var(--fw-regular);
+    }
+    .principle-card h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      line-height: 1.2;
+      font-weight: var(--fw-regular);
+      font-variation-settings: "opsz" 24;
+      letter-spacing: -0.005em;
+      color: var(--ink);
+      margin: 0;
+    }
+    .principle-card p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: var(--fs-body-sm);
+      line-height: 1.55;
+    }
+
+    /* ---------- Won't do list ---------- */
+    .wont-do {
+      background: var(--ink);
+      color: var(--bg-cream);
+      padding-block: var(--section-y);
+      padding-inline: var(--gutter);
+    }
+    .wont-do__inner {
+      max-width: var(--container-standard);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-8);
+      align-items: start;
+    }
+    @media (min-width: 64em) {
+      .wont-do__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: clamp(var(--space-10), 5vw, var(--space-16)); }
+    }
+    .wont-do h2 {
+      color: var(--bg-cream);
+      max-width: 14ch;
+      font-variation-settings: "opsz" 96, "SOFT" 30;
+    }
+    .wont-do .eyebrow { color: var(--gold); }
+    .wont-do .eyebrow::before,
+    .wont-do .eyebrow::after { background: var(--gold); }
+    .wont-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .wont-list li {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: var(--space-5);
+      padding-block: var(--space-5);
+      border-bottom: 1px solid rgba(246, 242, 236, 0.1);
+    }
+    .wont-list li:last-child { border-bottom: 0; }
+    .wont-list__x {
+      color: var(--gold);
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      line-height: 1;
+      font-variation-settings: "opsz" 24;
+      min-width: 1.25rem;
+    }
+    .wont-list h3 {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--bg-cream);
+      margin: 0 0 4px;
+      font-weight: var(--fw-regular);
+      font-variation-settings: "opsz" 24;
+    }
+    .wont-list p {
+      margin: 0;
+      color: rgba(246, 242, 236, 0.72);
+      font-size: var(--fs-body-sm);
+      line-height: 1.5;
+      max-width: 48ch;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Global nav — utility bar + main bar. -->
+  <header class="site-nav">
+    <div class="site-nav__utility">
+      <div class="container site-nav__utility-inner">
+        <div class="site-nav__utility-left">
+          <a href="tel:+14089088131" aria-label="Call FlipFix Digital">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            (408) 908-8131
+          </a>
+          <a href="mailto:shanehnguyen@flipfixdigital.com">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            shanehnguyen@flipfixdigital.com
+          </a>
+          <span class="site-nav__hours"><span>Available 24/7 &middot; 12-hour reply</span></span>
+        </div>
+        <div class="site-nav__utility-right" aria-label="Social links">
+          <a class="site-nav__social" href="https://www.linkedin.com/in/shanenguyen1253/" target="_blank" rel="noopener" aria-label="Shane on LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.25 6.5 1.78 1.78 0 0 1 6.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+          </a>
+          <a class="site-nav__social" href="https://www.facebook.com/flipfixdigital/" target="_blank" rel="noopener" aria-label="FlipFix Digital on Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a class="site-nav__social" href="https://flipfixdigital.com/" target="_blank" rel="noopener" aria-label="FlipFix Digital on Google">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.545 10.239v3.821h5.445c-0.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866 0.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-0.013z"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container site-nav__inner">
+      <a class="site-nav__brand" href="index.html"><img src="assets/images/mylogos/logo-no-background.png" alt=""><span class="site-nav__brand-text">FlipFix Digital</span></a>
+      <nav aria-label="Primary">
+        <ul class="site-nav__links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="work.html">Work</a></li>
+          <li><a href="about.html" aria-current="page">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="site-nav__cta">
+        <a class="btn btn-primary" href="schedule.html">Schedule intro call</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="page-hero__inner">
+        <div class="page-hero__text fade-in">
+          <p class="eyebrow">About | FlipFix Digital</p>
+          <h1>I build cabinet dealer sites. That&rsquo;s it.</h1>
+          <p class="lede">Not plumbers, not dentists, not SaaS startups. Every project I take is a cabinet dealer build, and I know it the way your sharpest designer knows door construction.</p>
+          <div class="page-hero__cta">
+            <a class="btn btn-primary btn-lg" href="schedule.html">Schedule intro call</a>
+            <a class="btn btn-secondary btn-lg" href="work.html">See recent work</a>
+          </div>
+        </div>
+
+        <!-- TODO: upload real portrait to /assets/images/shane.jpg
+             File does not exist yet. When it lands, replace the .placeholder
+             div below with: <img src="assets/images/shane.jpg"
+             alt="Shane Nguyen, founder of FlipFix Digital"> — leave the
+             surrounding <figure class="page-hero__portrait"> intact so the
+             gold offset frame and aspect ratio stay in place. -->
+        <figure class="page-hero__portrait fade-in">
+          <div class="placeholder" role="img" aria-label="Shane Nguyen portrait placeholder.">
+            <span>
+              Shane Nguyen &middot; portrait<br>
+              <small style="display:block;margin-top:var(--space-2);font-size:0.75rem;text-transform:none;letter-spacing:0;">Environmental 4:5, warm natural light, /assets/images/shane.jpg (TODO: upload)</small>
+            </span>
+          </div>
+        </figure>
+      </div>
+    </section>
+
+    <!-- FOUNDER PITCH -->
+    <section class="founder-pitch">
+      <div class="founder-pitch__inner">
+        <div class="founder-pitch__left fade-in">
+          <p class="eyebrow">Your vision, my commitment</p>
+          <h2>Hello, I&rsquo;m Shane.</h2>
+          <p class="founder-pitch__quote">&ldquo;Every cabinet dealer I&rsquo;ve worked with has the same problem: a site that looks fine and performs badly. I build the specific systems that fix the leaks, contractor portals, filterable catalogs, quote-to-cash flows. That&rsquo;s the whole practice.&rdquo;</p>
+        </div>
+
+        <div class="founder-pitch__right fade-in">
+          <p>Not another web designer who happens to have a cabinet client on the portfolio. I&rsquo;m the founder of FlipFix Digital, and <strong>cabinet dealer sites are the only thing I build.</strong> One industry, one practice, one obsession.</p>
+
+          <p>Here&rsquo;s the real kicker: I don&rsquo;t dabble in any of this. I build tag-gated contractor portals. I build metafield filter systems that cut through 40+ door styles without homeowners bouncing. I know where cabinet sites leak contractor quotes on a Friday at 5&thinsp;pm, and I know how to stop them from leaking again. This isn&rsquo;t a project on my resume. It&rsquo;s the whole practice.</p>
+
+          <p>I speak <em>face-frame vs frameless</em>, <em>rail and stile</em>, <em>KCMA certification</em>, <em>dealer tier pricing</em>, and <em>quote-to-cash</em> the same way your sharpest designer does. Not because I read a blog about it, but because I&rsquo;ve built the systems that run on it, and I&rsquo;ve built them enough times to know what breaks before it breaks.</p>
+
+          <p>So scratch &ldquo;web designer.&rdquo; I&rsquo;m the guy who takes cabinet dealers to the next tier. From the first intro call to launch day, my focus is one thing: <strong>more contractor quotes, more homeowner closes.</strong></p>
+
+          <p class="founder-pitch__promise">That&rsquo;s not a claim. It&rsquo;s my promise.</p>
+          <span class="founder-pitch__sig">&mdash; Shane Nguyen, Austin TX</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- BY THE NUMBERS (lightweight credibility stat band) -->
+    <section class="about-stats">
+      <div class="about-stats__inner fade-in">
+        <p class="eyebrow">By the numbers</p>
+
+        <div class="about-stats__grid" role="list" aria-label="About FlipFix Digital, by the numbers">
+          <div class="about-stat" role="listitem">
+            <span class="about-stat__value">6 shipped</span>
+            <span class="about-stat__label">Cabinet dealer sites launched.</span>
+          </div>
+          <div class="about-stat" role="listitem">
+            <span class="about-stat__value">1 industry</span>
+            <span class="about-stat__label">Zero generalist detours.</span>
+          </div>
+          <div class="about-stat" role="listitem">
+            <span class="about-stat__value">3&ndash;5 weeks</span>
+            <span class="about-stat__label">Typical build-to-launch window.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRINCIPLES -->
+    <section class="principles">
+      <div class="principles__head fade-in">
+        <p class="eyebrow">How I work</p>
+        <h2>Three principles. Every build.</h2>
+      </div>
+
+      <div class="principles__grid">
+        <article class="principle-card fade-in">
+          <span class="principle-card__no">01</span>
+          <h3>One project at a time.</h3>
+          <p>I don&rsquo;t juggle five dealers at once. The calendar is real on day one, and your build gets my focus end to end, no shuffled priorities, no surprise handoffs.</p>
+        </article>
+
+        <article class="principle-card fade-in">
+          <span class="principle-card__no">02</span>
+          <h3>Founder-led. Direct access.</h3>
+          <p>You call me, I pick up. No account managers, no junior handoffs, no overseas team, no ticket system between you and the person writing the code.</p>
+        </article>
+
+        <article class="principle-card fade-in">
+          <span class="principle-card__no">03</span>
+          <h3>Dealer-owned. Fixed-price.</h3>
+          <p>You know the number before we start. When it ships, the code, design system, and metafields belong to you. Not to me. Not to a platform you rent.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- WHAT I WON'T DO -->
+    <section class="wont-do">
+      <div class="wont-do__inner">
+        <div class="fade-in">
+          <p class="eyebrow">Honest limits</p>
+          <h2 style="margin-top: var(--space-4);">What I won&rsquo;t do.</h2>
+          <p style="margin-top: var(--space-5); color: rgba(246, 242, 236, 0.72); max-width: 38ch;">Specialization isn&rsquo;t a services page padded out to look bigger. If you need these things, I know people who do them well. They&rsquo;re not me.</p>
+        </div>
+
+        <ul class="wont-list fade-in">
+          <li>
+            <span class="wont-list__x" aria-hidden="true">&times;</span>
+            <div>
+              <h3>SEO retainers</h3>
+              <p>Every build I ship preserves the rankings you&rsquo;ve earned with proper redirects and structured data, but monthly SEO retainers aren&rsquo;t my practice.</p>
+            </div>
+          </li>
+          <li>
+            <span class="wont-list__x" aria-hidden="true">&times;</span>
+            <div>
+              <h3>Ad management</h3>
+              <p>Your site needs to convert the traffic you already have before paid ads make sense. If the homepage is leaking, ad spend just widens the leak.</p>
+            </div>
+          </li>
+          <li>
+            <span class="wont-list__x" aria-hidden="true">&times;</span>
+            <div>
+              <h3>&ldquo;Websites for any business that&rsquo;ll pay&rdquo;</h3>
+              <p>Cabinet dealers. Full stop. Pattern recognition compounds when you&rsquo;re in a single industry, I won&rsquo;t dilute it.</p>
+            </div>
+          </li>
+          <li>
+            <span class="wont-list__x" aria-hidden="true">&times;</span>
+            <div>
+              <h3>Fabricated metrics or borrowed testimonials</h3>
+              <p>I won&rsquo;t invent review counts or inflate years in business. Sophisticated buyers smell fake testimonials the way contractors smell particle board.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+      <div class="container-narrow fade-in">
+        <p class="eyebrow">Next</p>
+        <h2>Send your URL. Get a free teardown video in 48 hours.</h2>
+        <p>No call required until you want one. If we&rsquo;re not a fit, the teardown is yours to keep.</p>
+        <div class="final-cta__cta">
+          <a class="btn btn-primary btn-lg" href="contact.html">Send your URL</a>
+          <a class="btn btn-ghost" href="work.html">See PK Cabinets case study</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global footer -->
+  <footer class="site-footer">
+    <div class="site-footer__cta">
+      <div class="container site-footer__cta-inner">
+        <div>
+          <h3>Ready to bring in more contractors and close more homeowners?</h3>
+          <p>Schedule a 30-minute intro call. Or send your URL for a free teardown, no call required, 48-hour turnaround.</p>
+        </div>
+        <div class="site-footer__cta-actions">
+          <a class="btn btn-primary" href="schedule.html">Schedule intro call</a>
+          <a class="site-footer__cta-phone" href="tel:+14089088131">(408)&thinsp;908-8131</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__main">
+      <div class="container site-footer__grid">
+        <div class="site-footer__brand-col">
+          <p class="site-footer__logo"><img src="assets/images/mylogos/full-logo-no-background.png" alt="FlipFix Digital, websites for cabinet dealers"></p>
+          <p class="site-footer__bio">Cabinet dealer sites. E-commerce storefronts and contractor portals, built by a specialist. Fixed scope, dealer-owned, live in 3&ndash;5 weeks.</p>
+        </div>
+
+        <nav class="site-footer__col" aria-label="Site">
+          <h4>Site</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__col" aria-label="Get started">
+          <h4>Get started</h4>
+          <ul>
+            <li><a href="schedule.html">Schedule intro call</a></li>
+            <li><a href="contact.html">Free teardown audit</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+          </ul>
+        </nav>
+
+        <nav class="site-footer__col site-footer__legal-col" aria-label="Legal">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="privacy.html">Privacy</a></li>
+            <li><a href="terms.html">Terms</a></li>
+          </ul>
+          <div class="site-footer__socials" aria-label="Social links">
+            <a href="https://www.linkedin.com/in/shanenguyen1253/" target="_blank" rel="noopener" aria-label="Shane on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.25 6.5 1.78 1.78 0 0 1 6.5 8.25zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
+            </a>
+            <a href="https://www.facebook.com/flipfixdigital/" target="_blank" rel="noopener" aria-label="FlipFix Digital on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+            <a href="https://flipfixdigital.com/" target="_blank" rel="noopener" aria-label="FlipFix Digital on Google">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.545 10.239v3.821h5.445c-0.712 2.315-2.647 3.972-5.445 3.972a6.033 6.033 0 110-12.064c1.498 0 2.866 0.549 3.921 1.453l2.814-2.814A9.969 9.969 0 0012.545 2C7.021 2 2.543 6.477 2.543 12s4.478 10 10.002 10c8.396 0 10.249-7.85 9.426-11.748l-9.426-0.013z"/></svg>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <div class="site-footer__legal">
+      <div class="container site-footer__legal-inner">
+        <span>&copy; 2026 FlipFix Digital. Cabinet dealer sites, nothing else.</span>
+        <div class="site-footer__legal-right">
+          <a href="privacy.html">Privacy</a>
+          <a href="terms.html">Terms</a>
+          <a href="sitemap.xml">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>

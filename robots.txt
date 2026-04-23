@@ -1,0 +1,9 @@
+# FlipFix Digital — Cabinet dealer sites
+# Replace the sitemap host with the real production domain before launch.
+
+User-agent: *
+Allow: /
+Disallow: /styleguide.html
+Disallow: /src/
+
+Sitemap: https://flipfixdigital.com/sitemap.xml
