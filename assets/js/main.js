@@ -1,6 +1,40 @@
 /* =====================================================================
-   main.js — minimal behaviour. Scroll fade-in + contact form submit.
+   main.js — minimal behaviour. Scroll fade-in + nav toggle + contact form.
    ===================================================================== */
+
+(function navToggle() {
+  const toggle = document.querySelector('.nav-toggle');
+  const drawer = document.getElementById('mobile-nav');
+  if (!toggle || !drawer) return;
+
+  const setOpen = (open) => {
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    if (open) drawer.removeAttribute('hidden');
+    else drawer.setAttribute('hidden', '');
+  };
+
+  toggle.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    setOpen(!isOpen);
+  });
+
+  drawer.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => setOpen(false));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+
+  const mq = window.matchMedia('(min-width: 64.001em)');
+  const onMq = (e) => { if (e.matches) setOpen(false); };
+  if (mq.addEventListener) mq.addEventListener('change', onMq);
+  else if (mq.addListener) mq.addListener(onMq);
+})();
 
 (function scrollReveal() {
   const items = document.querySelectorAll('.fade-in');
