@@ -19,16 +19,16 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://flipfixdigital.com/contact</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://flipfixdigital.com/schedule</loc>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://flipfixdigital.com/schedule</loc>
-    <lastmod>2026-04-23</lastmod>
+    <loc>https://flipfixdigital.com/audit</loc>
+    <lastmod>2026-04-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://flipfixdigital.com/about</loc>

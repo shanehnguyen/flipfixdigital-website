@@ -56,6 +56,20 @@
   color: var(--bg-cream);
 }
 
+/* Gold-outlined secondary CTA — used in the nav next to the primary
+   "Schedule intro call" button. Same height + padding as the primary so the
+   two read as a paired unit; gold border + ink text keeps it quieter. */
+.btn-outline-gold {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--gold);
+}
+.btn-outline-gold:hover {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--bg-cream);
+}
+
 .btn-ghost {
   background: transparent;
   color: var(--ink);
@@ -242,7 +256,11 @@
 .site-nav__cta {
   margin-left: var(--space-4);
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
 }
+.site-nav__cta .btn { white-space: nowrap; }
 
 @media (max-width: 64em) {
   .site-nav__links { display: none; }
@@ -325,7 +343,12 @@
   letter-spacing: 0.01em;
 }
 .mobile-nav__links a[aria-current="page"] { color: var(--gold-deep); }
-.mobile-nav__cta { display: block; margin-top: var(--space-5); }
+.mobile-nav__cta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
 .mobile-nav__cta .btn { width: 100%; }
 
 @media (min-width: 64.001em) {

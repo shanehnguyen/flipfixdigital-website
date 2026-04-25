@@ -1598,10 +1598,16 @@
       }
     }
     .about__portrait { margin: 0; position: relative; }
-    .about__portrait .placeholder {
+    .about__portrait .placeholder,
+    .about__portrait img {
       aspect-ratio: 4 / 5;
       min-height: 20rem;
       max-height: 32rem;
+      width: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: saturate(0.92) contrast(1.02);
     }
     .about__portrait::before {
       content: "";
@@ -1857,6 +1863,82 @@
        footer markup (not a shared component), so we scope-hide here. Final
        teardown CTA above is the single primary CTA on the homepage. */
     .site-footer__cta { display: none; }
+
+    /* ---------- Final CTA: scorecard form (dark ink bookend) ----------
+       Sits at the bottom of the homepage. Same .final-cta dark styling,
+       restyled to host an inline URL input + button. Submitting hands off
+       to /audit.html?scan=<url> which auto-runs the scan + loading flow. */
+    .final-cta__form {
+      margin-top: var(--space-6);
+      display: flex;
+      gap: var(--space-3);
+      flex-wrap: nowrap;
+      align-items: stretch;
+      max-width: 38rem;
+      margin-inline: auto;
+    }
+    @media (max-width: 40em) {
+      .final-cta__form { flex-wrap: wrap; }
+      .final-cta__btn { width: 100%; }
+    }
+    .final-cta__input {
+      flex: 1 1 auto;
+      min-width: 0;
+      font-family: var(--font-body);
+      font-size: var(--fs-body);
+      line-height: 1.4;
+      color: var(--bg-cream);
+      background: rgba(246, 242, 236, 0.06);
+      border: 1px solid rgba(246, 242, 236, 0.25);
+      border-radius: var(--radius-sm);
+      padding: var(--space-4);
+      transition: border-color var(--duration-fast) var(--ease-out),
+                  background var(--duration-fast) var(--ease-out),
+                  box-shadow var(--duration-fast) var(--ease-out);
+    }
+    .final-cta__input::placeholder { color: rgba(246, 242, 236, 0.45); }
+    .final-cta__input:hover { border-color: rgba(246, 242, 236, 0.55); }
+    .final-cta__input:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: rgba(246, 242, 236, 0.1);
+      box-shadow: 0 0 0 3px rgba(168, 144, 96, 0.35);
+    }
+    .final-cta__input[aria-invalid="true"] {
+      border-color: #C76A56;
+      box-shadow: 0 0 0 3px rgba(199, 106, 86, 0.25);
+    }
+    .final-cta__btn {
+      flex: 0 0 auto;
+      white-space: nowrap;
+      background: var(--gold);
+      color: var(--ink);
+      border-color: var(--gold);
+    }
+    .final-cta__btn:hover {
+      background: var(--bg-cream);
+      color: var(--ink);
+      border-color: var(--bg-cream);
+    }
+    .final-cta__error {
+      margin: var(--space-3) 0 0;
+      font-size: var(--fs-caption);
+      color: #C76A56;
+      min-height: 1em;
+      text-align: center;
+    }
+    .final-cta__tertiary {
+      margin-top: var(--space-5);
+      font-size: var(--fs-body-sm);
+    }
+    .final-cta__tertiary a {
+      color: rgba(246, 242, 236, 0.78);
+      text-decoration: underline;
+      text-decoration-color: var(--gold);
+      text-underline-offset: 0.25em;
+      transition: color var(--duration-fast) var(--ease-out);
+    }
+    .final-cta__tertiary a:hover { color: var(--gold); }
   </style>
 </head>
 
@@ -1902,12 +1984,14 @@
         <ul class="site-nav__links">
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="work.html">Work</a></li>
+
           <li><a href="about.html">About</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
+
         </ul>
       </nav>
       <div class="site-nav__cta">
+        <a class="btn btn-outline-gold" href="audit.html">Score my homepage →</a>
         <a class="btn btn-primary" href="schedule.html">Schedule intro call</a>
       </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
@@ -1921,11 +2005,13 @@
         <ul class="mobile-nav__links">
           <li><a href="index.html" aria-current="page">Home</a></li>
           <li><a href="work.html">Work</a></li>
+
           <li><a href="about.html">About</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
+
         </ul>
         <div class="mobile-nav__cta">
+          <a class="btn btn-outline-gold btn-lg" href="audit.html">Score my homepage →</a>
           <a class="btn btn-primary btn-lg" href="schedule.html">Schedule intro call</a>
         </div>
       </nav>
@@ -1953,7 +2039,7 @@
           <p class="lede">Cabinet dealer sites and contractor portals, built by a specialist. Your new site goes live in 3 to 5 weeks, fixed price, dealer-owned.</p>
 
           <div class="hero__cta">
-            <a class="btn btn-primary btn-lg" href="contact.html">Send your URL</a>
+            <a class="btn btn-primary btn-lg" href="schedule.html">Schedule intro call</a>
             <a class="btn btn-secondary btn-lg" href="work.html">See recent work</a>
           </div>
 
@@ -1998,7 +2084,6 @@
         </div>
       </div>
     </section>
-
 
     <!-- ================================================================
          01 — DEALER BUILDS (3-laptop grid + see-the-work CTA)
@@ -2101,7 +2186,7 @@
             <li>I speak face-frame, rail and stile, KCMA, and dealer tier pricing fluently.</li>
             <li>The site is yours forever. No subscription, no retainer, no pulled access.</li>
           </ul>
-          <a class="btn btn-primary" href="contact.html">Get a free teardown</a>
+          <a class="btn btn-primary" href="audit.html">Get a free teardown</a>
         </article>
       </div>
     </section>
@@ -2235,18 +2320,8 @@
           <a class="link-arrow about__link" href="about.html">Read the full story</a>
         </div>
 
-        <!-- TODO: upload real portrait to /assets/images/shane.jpg. File does
-             not exist yet. When it lands, replace the .placeholder div below
-             with <img src="assets/images/shane.jpg" alt="Shane Nguyen">,
-             keeping the surrounding <figure class="about__portrait"> so the
-             4:5 aspect frame stays in place. -->
         <figure class="about__portrait fade-in">
-          <div class="placeholder" role="img" aria-label="Shane Nguyen portrait placeholder.">
-            <span>
-              Shane Nguyen &middot; portrait<br>
-              <small style="display:block;margin-top:var(--space-2);font-size:0.75rem;text-transform:none;letter-spacing:0;">Environmental 4:5, warm natural light, /assets/images/shane.jpg (TODO: upload)</small>
-            </span>
-          </div>
+          <img src="assets/images/shane-professional-shot.jpg" alt="Shane Nguyen, founder of FlipFix Digital">
         </figure>
 
       </div>
@@ -2291,17 +2366,29 @@
     </section>
 
     <!-- ================================================================
-         07 — FINAL CTA (INK bookend — teardown is the single primary path)
+         07 — FINAL CTA (INK bookend — scorecard is the secondary path,
+         intro call is the primary). Submitting the form hands off to
+         /audit.html?scan=<url>, which runs the regular scan + loading flow
+         and renders the results page.
          ================================================================ -->
-    <section class="final-cta">
+    <section class="final-cta" id="start-here">
       <div class="container-narrow fade-in">
         <p class="eyebrow">07 &middot; Start here</p>
-        <h2>Send your URL. Get a free teardown video back in 48 hours.</h2>
-        <p>No call required. If it&rsquo;s a fit, we schedule one. If it&rsquo;s not, you keep the teardown.</p>
-        <div class="final-cta__cta">
-          <a class="btn btn-primary btn-lg" href="contact.html">Send your URL</a>
-          <a class="btn btn-ghost" href="contact.html">Or see what I need from you</a>
-        </div>
+        <h2>Not ready to talk? Score your homepage in 30 seconds.</h2>
+        <p>Paste your URL. 1&ndash;10 score against 47 cabinet dealer sites. No signup.</p>
+        <form class="final-cta__form" id="final-cta-scan-form" action="audit.html" method="get" novalidate>
+          <label for="final-cta-scan-url" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0;">Your homepage URL</label>
+          <input class="final-cta__input" id="final-cta-scan-url" name="scan" type="url" autocomplete="url" required placeholder="https://yourcabinetshop.com">
+          <button type="submit" class="btn btn-primary btn-lg final-cta__btn">Score my homepage &rarr;</button>
+
+          <!-- Honeypot: bots auto-fill named fields. Not visible. -->
+          <div aria-hidden="true" style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;opacity:0;pointer-events:none;">
+            <label for="final-cta-honey">Website (leave blank)</label>
+            <input id="final-cta-honey" name="website" type="text" tabindex="-1" autocomplete="off" value="">
+          </div>
+        </form>
+        <p class="final-cta__error" id="final-cta-scan-error" role="alert"></p>
+        <p class="final-cta__tertiary">Or <a href="schedule.html">schedule an intro call &rarr;</a></p>
       </div>
     </section>
 
@@ -2351,8 +2438,9 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="work.html">Work</a></li>
+
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
           </ul>
         </nav>
 
@@ -2361,7 +2449,7 @@
           <h4>Get started</h4>
           <ul>
             <li><a href="schedule.html">Schedule intro call</a></li>
-            <li><a href="contact.html">Free teardown audit</a></li>
+            <li><a href="audit.html">Free teardown audit</a></li>
             <li><a href="faq.html">FAQ</a></li>
           </ul>
         </nav>
@@ -2403,5 +2491,49 @@
   </footer>
 
   <script src="assets/js/main.js" defer></script>
+
+  <script>
+    // Final-CTA scorecard form — validate URL inline before handing off to
+    // /audit.html. The form submits via GET to audit.html?scan=<url>;
+    // audit.html picks up the param via maybeAutoScan() and runs the regular
+    // scan + loading flow, rendering the results page when done.
+    (function () {
+      const form = document.getElementById('final-cta-scan-form');
+      if (!form) return;
+      const input = document.getElementById('final-cta-scan-url');
+      const errorEl = document.getElementById('final-cta-scan-error');
+
+      function isValidHttpUrl(value) {
+        try {
+          const u = new URL(value);
+          return u.protocol === 'http:' || u.protocol === 'https:';
+        } catch { return false; }
+      }
+      function clearError() {
+        input.removeAttribute('aria-invalid');
+        if (errorEl) errorEl.textContent = '';
+      }
+
+      form.addEventListener('submit', function (e) {
+        let value = (input.value || '').trim();
+        // Quietly normalize a bare hostname so dealers who type
+        // "yourcabinetshop.com" don't bounce off the validator.
+        if (value && !/^https?:\/\//i.test(value) && /^[a-z0-9][\w.-]*\.[a-z]{2,}/i.test(value)) {
+          value = 'https://' + value;
+          input.value = value;
+        }
+        if (!isValidHttpUrl(value)) {
+          e.preventDefault();
+          input.setAttribute('aria-invalid', 'true');
+          if (errorEl) errorEl.textContent = 'That doesn’t look like a valid URL. It should start with http:// or https://.';
+          input.focus();
+          return;
+        }
+        clearError();
+        // Let the GET submission proceed: audit.html?scan=<url>
+      });
+      input.addEventListener('input', clearError);
+    })();
+  </script>
 </body>
 </html>

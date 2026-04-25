@@ -77,10 +77,16 @@
     .page-hero__text .lede { margin-top: var(--space-4); max-width: 46ch; }
     .page-hero__cta { margin-top: var(--space-6); display: flex; gap: var(--space-3); flex-wrap: wrap; }
     .page-hero__portrait { margin: 0; position: relative; }
-    .page-hero__portrait .placeholder {
+    .page-hero__portrait .placeholder,
+    .page-hero__portrait img {
       aspect-ratio: 4 / 5;
       min-height: 22rem;
       max-height: 30rem;
+      width: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+      filter: saturate(0.92) contrast(1.02);
     }
     .page-hero__portrait::before {
       content: "";
@@ -369,12 +375,14 @@
         <ul class="site-nav__links">
           <li><a href="index.html">Home</a></li>
           <li><a href="work.html">Work</a></li>
+
           <li><a href="about.html" aria-current="page">About</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
+
         </ul>
       </nav>
       <div class="site-nav__cta">
+        <a class="btn btn-outline-gold" href="audit.html">Score my homepage →</a>
         <a class="btn btn-primary" href="schedule.html">Schedule intro call</a>
       </div>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu">
@@ -388,11 +396,13 @@
         <ul class="mobile-nav__links">
           <li><a href="index.html">Home</a></li>
           <li><a href="work.html">Work</a></li>
+
           <li><a href="about.html" aria-current="page">About</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contact.html">Contact</a></li>
+
         </ul>
         <div class="mobile-nav__cta">
+          <a class="btn btn-outline-gold btn-lg" href="audit.html">Score my homepage →</a>
           <a class="btn btn-primary btn-lg" href="schedule.html">Schedule intro call</a>
         </div>
       </nav>
@@ -414,19 +424,8 @@
           </div>
         </div>
 
-        <!-- TODO: upload real portrait to /assets/images/shane.jpg
-             File does not exist yet. When it lands, replace the .placeholder
-             div below with: <img src="assets/images/shane.jpg"
-             alt="Shane Nguyen, founder of FlipFix Digital"> — leave the
-             surrounding <figure class="page-hero__portrait"> intact so the
-             gold offset frame and aspect ratio stay in place. -->
         <figure class="page-hero__portrait fade-in">
-          <div class="placeholder" role="img" aria-label="Shane Nguyen portrait placeholder.">
-            <span>
-              Shane Nguyen &middot; portrait<br>
-              <small style="display:block;margin-top:var(--space-2);font-size:0.75rem;text-transform:none;letter-spacing:0;">Environmental 4:5, warm natural light, /assets/images/shane.jpg (TODO: upload)</small>
-            </span>
-          </div>
+          <img src="assets/images/shane-professional-shot.jpg" alt="Shane Nguyen, founder of FlipFix Digital">
         </figure>
       </div>
     </section>
@@ -554,7 +553,7 @@
         <h2>Send your URL. Get a free teardown video in 48 hours.</h2>
         <p>No call required until you want one. If we&rsquo;re not a fit, the teardown is yours to keep.</p>
         <div class="final-cta__cta">
-          <a class="btn btn-primary btn-lg" href="contact.html">Send your URL</a>
+          <a class="btn btn-primary btn-lg" href="schedule.html">Schedule intro call</a>
           <a class="btn btn-ghost" href="work.html">See PK Cabinets case study</a>
         </div>
       </div>
@@ -589,8 +588,9 @@
           <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="work.html">Work</a></li>
+
             <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
+
           </ul>
         </nav>
 
@@ -598,7 +598,7 @@
           <h4>Get started</h4>
           <ul>
             <li><a href="schedule.html">Schedule intro call</a></li>
-            <li><a href="contact.html">Free teardown audit</a></li>
+            <li><a href="audit.html">Free teardown audit</a></li>
             <li><a href="faq.html">FAQ</a></li>
           </ul>
         </nav>
