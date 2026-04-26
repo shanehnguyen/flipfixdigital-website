@@ -265,7 +265,6 @@
 @media (max-width: 64em) {
   .site-nav__links { display: none; }
   .site-nav__cta { display: none; }
-  .nav-toggle { display: inline-flex; }
 }
 @media (max-width: 40em) {
   .site-nav__utility-inner { padding-block: var(--space-1); gap: var(--space-2) var(--space-3); }
@@ -278,10 +277,11 @@
 }
 
 /* ---------- Mobile nav: hamburger toggle + drawer ----------
-   Below 64em the inline links and primary CTA hide; the hamburger reveals
-   a stacked drawer beneath the nav containing the same links + CTA. */
+   Visible by default; hidden on desktop (≥64em) via the !important rule
+   below. (Default has to be visible because this base rule appears AFTER
+   the max-width media query in source order — same specificity, last wins.) */
 .nav-toggle {
-  display: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
