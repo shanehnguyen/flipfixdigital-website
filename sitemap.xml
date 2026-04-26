@@ -3,54 +3,55 @@
   Sitemap, FlipFix Digital.
   Clean URLs enabled via vercel.json (cleanUrls: true), so .html extensions
   are optional at the URL level. Update <lastmod> whenever a page materially
-  changes. Styleguide is intentionally excluded (dev-only, noindex).
+  changes. Styleguide and audit-test are intentionally excluded (internal,
+  noindex). API routes are not crawlable content and are excluded.
 -->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://flipfixdigital.com/</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://flipfixdigital.com/work</loc>
-    <lastmod>2026-04-23</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://flipfixdigital.com/schedule</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://flipfixdigital.com/audit</loc>
-    <lastmod>2026-04-24</lastmod>
+    <lastmod>2026-04-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://flipfixdigital.com/schedule</loc>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://flipfixdigital.com/about</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://flipfixdigital.com/faq</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://flipfixdigital.com/privacy</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://flipfixdigital.com/terms</loc>
-    <lastmod>2026-04-23</lastmod>
+    <lastmod>2026-04-26</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

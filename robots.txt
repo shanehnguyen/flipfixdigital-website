@@ -1,9 +1,13 @@
-# FlipFix Digital — Cabinet dealer sites
-# Replace the sitemap host with the real production domain before launch.
+# FlipFix Digital — robots policy
+# Allow all crawlers on public content. Disallow internal/dev pages and the
+# scan API endpoint (not indexable content).
 
 User-agent: *
 Allow: /
+Disallow: /styleguide
 Disallow: /styleguide.html
-Disallow: /src/
+Disallow: /audit-test
+Disallow: /audit-test.html
+Disallow: /api/
 
 Sitemap: https://flipfixdigital.com/sitemap.xml
