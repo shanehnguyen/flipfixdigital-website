@@ -274,71 +274,6 @@
       line-height: 1.55;
     }
 
-    /* ---------- Won't do list ---------- */
-    .wont-do {
-      background: var(--ink);
-      color: var(--bg-cream);
-      padding-block: var(--section-y);
-      padding-inline: var(--gutter);
-    }
-    .wont-do__inner {
-      max-width: var(--container-standard);
-      margin-inline: auto;
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: var(--space-8);
-      align-items: start;
-    }
-    @media (min-width: 64em) {
-      .wont-do__inner { grid-template-columns: minmax(0, 1fr) minmax(0, 1.3fr); gap: clamp(var(--space-10), 5vw, var(--space-16)); }
-    }
-    .wont-do h2 {
-      color: var(--bg-cream);
-      max-width: 14ch;
-      font-variation-settings: "opsz" 96, "SOFT" 30;
-    }
-    .wont-do .eyebrow { color: var(--gold); }
-    .wont-do .eyebrow::before,
-    .wont-do .eyebrow::after { background: var(--gold); }
-    .wont-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-    }
-    .wont-list li {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: var(--space-5);
-      padding-block: var(--space-5);
-      border-bottom: 1px solid rgba(246, 242, 236, 0.1);
-    }
-    .wont-list li:last-child { border-bottom: 0; }
-    .wont-list__x {
-      color: var(--gold);
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      line-height: 1;
-      font-variation-settings: "opsz" 24;
-      min-width: 1.25rem;
-    }
-    .wont-list h3 {
-      font-family: var(--font-display);
-      font-size: 1.25rem;
-      color: var(--bg-cream);
-      margin: 0 0 4px;
-      font-weight: var(--fw-regular);
-      font-variation-settings: "opsz" 24;
-    }
-    .wont-list p {
-      margin: 0;
-      color: rgba(246, 242, 236, 0.72);
-      font-size: var(--fs-body-sm);
-      line-height: 1.5;
-      max-width: 48ch;
-    }
   </style>
 </head>
 
@@ -506,48 +441,6 @@
           <h3>Dealer-owned. Fixed-price.</h3>
           <p>You know the number before we start. When it ships, the code, design system, and metafields belong to you. Not to us. Not to a platform you rent.</p>
         </article>
-      </div>
-    </section>
-
-    <!-- WHAT WE WON'T DO -->
-    <section class="wont-do">
-      <div class="wont-do__inner">
-        <div class="fade-in">
-          <p class="eyebrow">Honest limits</p>
-          <h2 style="margin-top: var(--space-4);">What we won&rsquo;t do.</h2>
-          <p style="margin-top: var(--space-5); color: rgba(246, 242, 236, 0.72); max-width: 38ch;">Specialization isn&rsquo;t a services page padded out to look bigger. If you need these things, we know people who do them well. They&rsquo;re not us.</p>
-        </div>
-
-        <ul class="wont-list fade-in">
-          <li>
-            <span class="wont-list__x" aria-hidden="true">&times;</span>
-            <div>
-              <h3>SEO retainers</h3>
-              <p>Every build we ship preserves the rankings you&rsquo;ve earned with proper redirects and structured data, but monthly SEO retainers aren&rsquo;t our practice.</p>
-            </div>
-          </li>
-          <li>
-            <span class="wont-list__x" aria-hidden="true">&times;</span>
-            <div>
-              <h3>Ad management</h3>
-              <p>Your site needs to convert the traffic you already have before paid ads make sense. If the homepage is leaking, ad spend just widens the leak.</p>
-            </div>
-          </li>
-          <li>
-            <span class="wont-list__x" aria-hidden="true">&times;</span>
-            <div>
-              <h3>&ldquo;Websites for any business that&rsquo;ll pay&rdquo;</h3>
-              <p>Cabinet dealers. Full stop. Pattern recognition compounds when you&rsquo;re in a single industry, we won&rsquo;t dilute it.</p>
-            </div>
-          </li>
-          <li>
-            <span class="wont-list__x" aria-hidden="true">&times;</span>
-            <div>
-              <h3>Fabricated metrics or borrowed testimonials</h3>
-              <p>We won&rsquo;t invent review counts or inflate years in business. Sophisticated buyers smell fake testimonials the way contractors smell particle board.</p>
-            </div>
-          </li>
-        </ul>
       </div>
     </section>
 
